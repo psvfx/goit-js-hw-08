@@ -35,6 +35,10 @@ const clearFormState = () => {
 // Функція, яка виконується при сабміті форми
 const handleSubmit = event => {
   event.preventDefault();
+
+  if (emailInput.value === '' || messageInput.value === '') {
+    return alert('Please fill in all the fields!');
+  }
   const formState = {
     email: emailInput.value,
     message: messageInput.value,
